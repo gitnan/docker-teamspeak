@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y bzip2 w3m wget && rm -rf /var/lib/apt/l
   tar jxf /tmp/teamspeak.tar.bz2 -C /opt &&\
   mv /opt/teamspeak3-server_* ${TS_DIRECTORY} &&\
   rm /tmp/teamspeak.tar.bz2 &&\
+  ./opt/teamspeak/ts3server_minimal_runscript.sh createinifile=1
   apt-get purge -y bzip2 w3m wget &&\
   apt-get autoremove -y &&\
   rm -rf /var/lib/apt/lists/*
