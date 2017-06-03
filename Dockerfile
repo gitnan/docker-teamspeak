@@ -28,3 +28,7 @@ COPY entrypoint.sh /entrypoint.sh
 USER teamspeak
 EXPOSE 10000/udp 10001 10002
 ENTRYPOINT ["/entrypoint.sh"]
+
+RUN sed -i "s|default_voice_port=1337|default_voice_port=10000 |g" /opt/teamspeak/ts3server.ini
+  sed -i "s|query_port=10011|query_port=10001 |g" /opt/teamspeak/ts3server.ini
+  sed -i "s|filetransfer_port=30033|filetransfer_port=10002 |g" /opt/teamspeak/ts3server.ini
