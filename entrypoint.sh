@@ -41,8 +41,5 @@ do
 done
 
 export LD_LIBRARY_PATH=".:$LD_LIBRARY_PATH"
-exec /tini -- ./ts3server createinifile = 1 $@
+exec /tini -- ./ts3server $@
 
-RUN sed -i "s|default_voice_port=1337|default_voice_port=10000 |g" /opt/teamspeak/ts3server.ini
-  sed -i "s|query_port=10011|query_port=10001 |g" /opt/teamspeak/ts3server.ini
-  sed -i "s|filetransfer_port=30033|filetransfer_port=10002 |g" /opt/teamspeak/ts3server.ini
