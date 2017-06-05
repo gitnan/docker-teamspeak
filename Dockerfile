@@ -26,5 +26,4 @@ RUN chmod +x /tini
 COPY entrypoint.sh /entrypoint.sh
 
 USER teamspeak
-EXPOSE 10000/udp 10001 10002
 ENTRYPOINT ["/entrypoint.sh"]
